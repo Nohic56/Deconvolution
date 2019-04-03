@@ -1,0 +1,3 @@
+// the configured options and settings for Deconvolution
+#define Deconvolution_VERSION_MAJOR @Deconvolution_VERSION_MAJOR@
+#define Deconvolution_VERSION_MINOR @Deconvolution_VERSION_MINOR@
