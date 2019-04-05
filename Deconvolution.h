@@ -20,9 +20,10 @@ using namespace std;
 
 struct Feature_Struct // Structure to record data
 {
-	double Feature;
 	int Charge;
+	double Feature;
 	double Mass;
+	double STD;
 };
 
 class Deconvolution
@@ -31,6 +32,7 @@ public:
 	vector<Feature_Struct> Feature_List;
 	vector<Feature_Struct> Feature_Target;
 	Deconvolution(int);
+	double Standart_Dev(double data[],int);
 private:
 
 };
