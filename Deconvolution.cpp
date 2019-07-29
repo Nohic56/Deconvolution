@@ -25,17 +25,22 @@ using namespace std;
 
 Deconvolution::Deconvolution(int File)
 {
-	cout <<"File is then :"<<File<<endl;
+	cout << "####################### Warning !!! ########################################################" << endl;
+	cout << "Charge Max is 50" << endl;
+	cout << "Isotope Max is 50" << endl;
+	cout << "############################################################################################" << endl;
+
+	//cout <<"File is then :"<<File<<endl;
 	struct Feature_Struct TEMP;
-	TEMP.Feature = 1153.5368;//300.0;
+	TEMP.Feature = 562.56;//1153.5368;//300.0;
 	TEMP.Mass = 0.0;
 	TEMP.Charge = 0;
 	Feature_List.push_back(TEMP);
-	TEMP.Feature = 1071.214;//150.0;
+	TEMP.Feature = 588.0;//1071.214;//150.0;
 	Feature_List.push_back(TEMP);
-	TEMP.Feature = 999.867;//100.0;
+	TEMP.Feature = 616.00;//999.867;//100.0;
 	Feature_List.push_back(TEMP);
-	TEMP.Feature = 937.438;//75.0;
+	TEMP.Feature = 646.70;//937.438;//75.0;
 	Feature_List.push_back(TEMP);
 	
 	cout<<"Feature_List.size() : " << Feature_List.size()<<endl;
@@ -43,7 +48,7 @@ Deconvolution::Deconvolution(int File)
 	//classer les features si pas par décroissant
 	double Feature_Mass_Sum = 0.0;
 	double TARGET = Feature_List[0].Feature;
-	int MEMO_j = 0;
+	int MEMO_j = 1;
 	int MEMO_i = 0;
 				
 	for(int j =1;j<50;j++) //loop over charge
@@ -81,12 +86,19 @@ Deconvolution::Deconvolution(int File)
 	}
 	cout << "Min STD : "<<TARGET<<" Charge : "<<MEMO_j<<" Isotopic : "<<MEMO_i<<endl;
 	cout<<"Here is the cluster parameter"<<endl;
+	if (TARGET > 1)
+	{
+		cout << "####################### Warning !!! ########################################################"<<endl;
+		cout << "I still have a hight standar deviation value can be false" << endl;
+		cout << "############################################################################################"<< endl;
+	}
+	else {}
 	for(int L=0;L<Feature_List.size();L++) //Loop over each cluster
 	{
-		cout<<"Feature : "<<Feature_List[L].Feature;
-		cout<<" Mass : "<<((Feature_List[L].Feature + MEMO_i/(MEMO_j+L) )*(MEMO_j+L))-(MEMO_j+L);
-		cout << "Type of Mass"<<typeid(((Feature_List[L].Feature + MEMO_i/(MEMO_j+L) )*(MEMO_j+L))-(MEMO_j+L)).name()<<endl;
-		cout<<" Charge : "<<MEMO_j+L<<endl;
+		cout<<"Feature original mass given : "<<Feature_List[L].Feature << endl;
+		cout << "Computed Protein Mass : " << ((Feature_List[L].Feature + MEMO_i / (MEMO_j + L)) * (MEMO_j + L)) - (MEMO_j + L) << endl;
+		//cout << "Type of Mass" << typeid(((Feature_List[L].Feature + MEMO_i / (MEMO_j + L)) * (MEMO_j + L)) - (MEMO_j + L)).name() << endl;
+		cout << "With Charge : " << MEMO_j + L << endl;
 	}
 }
 
