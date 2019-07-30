@@ -28,21 +28,24 @@ Deconvolution::Deconvolution(int File)
 	cout << "####################### Warning !!! ########################################################" << endl;
 	cout << "Charge Max is 50" << endl;
 	cout << "Isotope Max is 50" << endl;
+	//cout << "Please check that i am orderered in decroisant order !" << endl;
 	cout << "############################################################################################" << endl;
 
 	//cout <<"File is then :"<<File<<endl;
 	struct Feature_Struct TEMP;
-	TEMP.Feature = 562.56;//1153.5368;//300.0;
+	TEMP.Feature = 616.00;//1071.214;//150.0;
 	TEMP.Mass = 0.0;
 	TEMP.Charge = 0;
 	Feature_List.push_back(TEMP);
-	TEMP.Feature = 588.0;//1071.214;//150.0;
+	TEMP.Feature = 646.70;//999.867;//100.0;
 	Feature_List.push_back(TEMP);
-	TEMP.Feature = 616.00;//999.867;//100.0;
+	TEMP.Feature = 588.0;//937.438;//75.0;
 	Feature_List.push_back(TEMP);
-	TEMP.Feature = 646.70;//937.438;//75.0;
+	TEMP.Feature = 562.56;//1153.5368;//300.0;
 	Feature_List.push_back(TEMP);
-	
+	//std::sort(Feature_List.Feature.rbegin(), Feature_List.Feature.rend());
+	struct sort_Feature sF;
+	sort(Feature_List.begin(), Feature_List.end(), sF);  // Sort according to feature decroissant order
 	cout<<"Feature_List.size() : " << Feature_List.size()<<endl;
 	
 	//classer les features si pas par décroissant
@@ -51,20 +54,20 @@ Deconvolution::Deconvolution(int File)
 	int MEMO_j = 1;
 	int MEMO_i = 0;
 				
+
 	for(int j =1;j<50;j++) //loop over charge
 	{
 		for(int i =0;i<50;i++) //loop over Isotope
 		{
 			long unsigned int Nb_Row = Feature_List.size();
 			double data[Nb_Row];
-			for(int L=0;L<Feature_List.size();L++) //Loop over each cluster
+			for (int L = 0; L < Feature_List.size(); L++) //Loop over each cluster
 			{
-				TEMP.Mass = ((Feature_List[L].Feature + i/(j+L) )*(j+L))-(j+L);
-				TEMP.Charge = j+L;
+				TEMP.Mass = ((Feature_List[L].Feature + i / (j + L)) * (j + L)) - (j + L);
+				TEMP.Charge = j + L;
 				Feature_Target.push_back(TEMP);
-				data[L] = TEMP.Mass;		
+				data[L] = TEMP.Mass;
 			}
-			
 			double New_TARGET = Standart_Dev(data,Nb_Row);
 
 			//~ cout<<"Feature_Target with isotope ["<<i<<"]: ";
@@ -81,7 +84,7 @@ Deconvolution::Deconvolution(int File)
 				TARGET = New_TARGET;
 				MEMO_j = j; //Charge
 				MEMO_i = i; //isotope
-			}
+			}	
 		}
 	}
 	cout << "Min STD : "<<TARGET<<" Charge : "<<MEMO_j<<" Isotopic : "<<MEMO_i<<endl;
