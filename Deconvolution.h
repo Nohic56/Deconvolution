@@ -21,6 +21,7 @@ using namespace std;
 struct Feature_Struct // Structure to record data
 {
 	int Charge;
+	int Isotope;
 	double Feature;
 	double Mass;
 	double STD;
@@ -33,6 +34,7 @@ public:
 	vector<Feature_Struct> Feature_Target;
 	Deconvolution(int);
 	double Standart_Dev(double data[],int);
+	void Fine_Deconvolution(vector<Feature_Struct>&);
 private:
 
 };
