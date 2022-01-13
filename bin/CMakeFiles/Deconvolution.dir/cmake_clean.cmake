@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Deconvolution.dir/Main_Deconvolution.cpp.o"
   "CMakeFiles/Deconvolution.dir/Deconvolution.cpp.o"
-  "Deconvolution.pdb"
+  "CMakeFiles/Deconvolution.dir/Main_Deconvolution.cpp.o"
   "Deconvolution"
+  "Deconvolution.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

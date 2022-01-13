@@ -26,6 +26,7 @@ struct Feature_Struct // Structure to record data
 	double Mass;
 	double STD;
 };
+// Sort feature by mass
 struct sort_Feature { inline bool operator() (const struct  Feature_Struct& A, const struct Feature_Struct& B) { return A.Feature > B.Feature; } };
 class Deconvolution
 {

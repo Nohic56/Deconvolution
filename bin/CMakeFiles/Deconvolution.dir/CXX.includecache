@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/Nicolas/Documents/Developpment_CPP/Deconvolution/Deconvolution.cpp
+//mnt/c/Users/Nicolas/Documents/Developement/Deconvolution/Deconvolution.cpp
 fstream
 -
 iostream
@@ -38,9 +38,9 @@ unistd.h
 typeinfo
 -
 Deconvolution.h
-/mnt/c/Users/Nicolas/Documents/Developpment_CPP/Deconvolution/Deconvolution.h
+//mnt/c/Users/Nicolas/Documents/Developement/Deconvolution/Deconvolution.h
 
-/mnt/c/Users/Nicolas/Documents/Developpment_CPP/Deconvolution/Deconvolution.h
+//mnt/c/Users/Nicolas/Documents/Developement/Deconvolution/Deconvolution.h
 fstream
 -
 iostream
@@ -73,44 +73,4 @@ sys/stat.h
 -
 stdlib.h
 -
-
-/mnt/c/Users/Nicolas/Documents/Developpment_CPP/Deconvolution/Main_Deconvolution.cpp
-fstream
--
-iostream
--
-string
--
-stdio.h
--
-stdlib.h
--
-math.h
--
-time.h
--
-vector
--
-limits.h
--
-float.h
--
-stdio.h
--
-string.h
--
-sys/time.h
--
-unistd.h
--
-sys/types.h
--
-sys/wait.h
--
-sys/ipc.h
--
-sys/shm.h
--
-Deconvolution.h
-/mnt/c/Users/Nicolas/Documents/Developpment_CPP/Deconvolution/Deconvolution.h
 

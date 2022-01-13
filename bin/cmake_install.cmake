@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/Nicolas/Documents/Developpment_CPP/Deconvolution
+# Install script for directory: //mnt/c/Users/Nicolas/Documents/Developement/Deconvolution
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/Nicolas/Documents/Developpment_CPP/Deconvolution/bin/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "//mnt/c/Users/Nicolas/Documents/Developement/Deconvolution/bin/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

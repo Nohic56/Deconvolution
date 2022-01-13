@@ -1,3 +1,0 @@
-/home/nicolas/Bureau/Deconvolution/build/CMakeFiles/edit_cache.dir
-/home/nicolas/Bureau/Deconvolution/build/CMakeFiles/rebuild_cache.dir
-/home/nicolas/Bureau/Deconvolution/build/CMakeFiles/Deconvolution.dir
